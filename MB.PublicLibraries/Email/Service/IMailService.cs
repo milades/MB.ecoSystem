@@ -13,6 +13,7 @@ namespace MB.PublicLibraries.Email.Service
     }
 
 
+
     public class CipherService : ICipherService
     {
         private readonly IDataProtectionProvider _dataProtectionProvider;
