@@ -1,5 +1,4 @@
-﻿using MlkPwgen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -107,9 +106,6 @@ namespace MB.PublicLibraries.String
         {
             return Guid.NewGuid().ToString();
         }
-        public string GeneratePassword()
-        {
-            return PasswordGenerator.Generate(length: 8, allowed: Sets.Alphanumerics);             
-        }
+        
     }
 }
