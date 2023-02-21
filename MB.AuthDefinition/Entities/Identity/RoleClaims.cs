@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MB.AuthDefinition
-{   
+namespace MB.AuthDefinition.Entities.Identity
+{
     public class RoleClaims : IdentityRoleClaim<int>
     {
         public bool is_default { get; set; } = false;

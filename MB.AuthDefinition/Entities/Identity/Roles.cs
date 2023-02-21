@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MB.AuthDefinition
+namespace MB.AuthDefinition.Entities.Identity
 {
     public class Roles : IdentityRole<int>
     {
-        public string? caption { get; set; }        
+        public string? caption { get; set; }
 
         [ForeignKey("Parent")]
         public int? parent_id { get; set; }

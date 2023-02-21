@@ -2,17 +2,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MB.AuthDefinition
-{     
+namespace MB.AuthDefinition.Entities.Identity
+{
     public class Users : IdentityUser<int>
     {
-        [StringLength(50)]        
+        [StringLength(50)]
         public string? first_name { get; set; }
 
         [StringLength(50)]
         public string? last_name { get; set; }
 
-       // [NotMapped]
+        // [NotMapped]
         //public string? full_name =>$"{first_name} {last_name} ({UserName})";
         public string? full_name { get; set; }
 
@@ -34,12 +34,12 @@ namespace MB.AuthDefinition
         [StringLength(50)]
         public string? sys_code { get; set; }
 
-        
+
 
         //[ForeignKey("Parent")]
         //public int? parent_id { get; set; }
         //public virtual Users? Parent { get; set; }
-         
+
         //public virtual ICollection<Users>? childs { get; set; }
 
         public bool is_deleted { get; set; } = false;
