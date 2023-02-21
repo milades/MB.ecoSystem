@@ -1,5 +1,4 @@
-﻿using MlkPwgen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -36,7 +35,7 @@ namespace MB.PublicLibraries.String
             byte[] bKey = new byte[20];
             byte[] IV = { 0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF };
             bKey = System.Text.Encoding.UTF8.GetBytes(strEncrypt.Substring(0, 8));
-            DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+            var des = new DESCryptoServiceProvider();
             Byte[] inputByteArray = inputByteArray = Convert.FromBase64String(strText);
             MemoryStream ms = new MemoryStream();
             CryptoStream cs = new CryptoStream(ms, des.CreateDecryptor(bKey, IV), CryptoStreamMode.Write);
@@ -53,7 +52,7 @@ namespace MB.PublicLibraries.String
             try
             {
                 byKey = System.Text.Encoding.UTF8.GetBytes(strEncrypt.Substring(0, 8));
-                DESCryptoServiceProvider des = new DESCryptoServiceProvider();
+                var des = new DESCryptoServiceProvider();
                 byte[] inputArray = System.Text.Encoding.UTF8.GetBytes(strText);
                 MemoryStream ms = new MemoryStream();
                 CryptoStream cs = new CryptoStream(ms, des.CreateEncryptor(byKey, dv), CryptoStreamMode.Write);
@@ -107,9 +106,6 @@ namespace MB.PublicLibraries.String
         {
             return Guid.NewGuid().ToString();
         }
-        public string GeneratePassword()
-        {
-            return PasswordGenerator.Generate(length: 8, allowed: Sets.Alphanumerics);             
-        }
+        
     }
 }
