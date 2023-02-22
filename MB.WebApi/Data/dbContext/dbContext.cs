@@ -12,10 +12,10 @@ using MB.DefaultConstants.Shared;
 
 namespace MB.WebApi.Data.dbContext
 {
-    public class dbContext : IdentityDbContext<Users, Roles, int, UserClaims, UserRoles, UserLogins, RoleClaims, UserTokens>
+    public class mb_db_context : IdentityDbContext<Users, Roles, int, UserClaims, UserRoles, UserLogins, RoleClaims, UserTokens>
     {
          
-        public dbContext(DbContextOptions options) : base(options)
+        public mb_db_context(DbContextOptions options) : base(options)
         {
 
         }
