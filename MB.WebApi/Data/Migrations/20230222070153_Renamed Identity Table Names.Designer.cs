@@ -4,6 +4,7 @@ using MB.WebApi.Data.dbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MB.WebApi.Data.Migrations
 {
     [DbContext(typeof(mb_db_context))]
-    partial class mb_db_contextModelSnapshot : ModelSnapshot
+    [Migration("20230222070153_Renamed Identity Table Names")]
+    partial class RenamedIdentityTableNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -272,17 +275,7 @@ namespace MB.WebApi.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("address")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
                     b.Property<string>("avatar")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("birth_date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("father_name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("first_name")

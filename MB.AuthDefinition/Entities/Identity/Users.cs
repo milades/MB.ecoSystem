@@ -15,6 +15,7 @@ namespace MB.AuthDefinition.Entities.Identity
         // [NotMapped]
         //public string? full_name =>$"{first_name} {last_name} ({UserName})";
         public string? full_name { get; set; }
+        public string? father_name { get; set; }
 
 
         [StringLength(10)]
@@ -34,7 +35,9 @@ namespace MB.AuthDefinition.Entities.Identity
         [StringLength(50)]
         public string? sys_code { get; set; }
 
-
+        [StringLength(500)]
+        public string? address { get; set; }
+        public DateTime? birth_date { get; set; }
 
         //[ForeignKey("Parent")]
         //public int? parent_id { get; set; }
